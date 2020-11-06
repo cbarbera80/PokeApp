@@ -3,23 +3,84 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F72AF659255589050010E573 /* BookmarksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AF658255589050010E573 /* BookmarksManager.swift */; };
+		F72AF65C2555893B0010E573 /* UserDefaultsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AF65B2555893B0010E573 /* UserDefaultsConfig.swift */; };
+		F72AF65F2555899E0010E573 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AF65E2555899E0010E573 /* Agent.swift */; };
+		F72AF66625558A8D0010E573 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AF66525558A8D0010E573 /* BookmarksViewController.swift */; };
+		F72AF66925558B760010E573 /* WhiteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AF66825558B760010E573 /* WhiteNavigationController.swift */; };
+		F72AF66C25558B830010E573 /* MainTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AF66B25558B830010E573 /* MainTheme.swift */; };
+		F72AF66F25558BE30010E573 /* PokemonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AF66E25558BE30010E573 /* PokemonListView.swift */; };
+		F72AF69325558CB90010E573 /* Anchorage in Frameworks */ = {isa = PBXBuildFile; productRef = F72AF69225558CB90010E573 /* Anchorage */; };
+		F72AF69625558DB30010E573 /* PokemonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AF69525558DB30010E573 /* PokemonListViewModel.swift */; };
+		F72AF69A2555950D0010E573 /* pokemons.json in Resources */ = {isa = PBXBuildFile; fileRef = F72AF6992555950D0010E573 /* pokemons.json */; };
+		F72AF69F2555966C0010E573 /* PokemonListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AF69E2555966C0010E573 /* PokemonListTableViewCell.swift */; };
+		F72AF6A3255597650010E573 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AF6A2255597650010E573 /* PokemonViewModel.swift */; };
 		F78371782555426A0085D2E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371772555426A0085D2E5 /* AppDelegate.swift */; };
-		F783717C2555426A0085D2E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F783717B2555426A0085D2E5 /* ViewController.swift */; };
+		F783717C2555426A0085D2E5 /* PokemonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F783717B2555426A0085D2E5 /* PokemonListViewController.swift */; };
 		F78371812555426C0085D2E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F78371802555426C0085D2E5 /* Assets.xcassets */; };
 		F78371842555426C0085D2E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F78371822555426C0085D2E5 /* LaunchScreen.storyboard */; };
+		F783719C255544EA0085D2E5 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7837198255544EA0085D2E5 /* Localizable.swift */; };
+		F783719D255544EA0085D2E5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7837199255544EA0085D2E5 /* Coordinator.swift */; };
+		F783719E255544EA0085D2E5 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F783719A255544EA0085D2E5 /* ReusableView.swift */; };
+		F783719F255544EA0085D2E5 /* RedditServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F783719B255544EA0085D2E5 /* RedditServices.swift */; };
+		F78371A9255545180085D2E5 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371A2255545180085D2E5 /* UIImageView+Extensions.swift */; };
+		F78371AA255545180085D2E5 /* Int+Etensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371A3255545180085D2E5 /* Int+Etensions.swift */; };
+		F78371AB255545180085D2E5 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371A4255545180085D2E5 /* UITableView+Extensions.swift */; };
+		F78371AC255545180085D2E5 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371A5255545180085D2E5 /* String+Extensions.swift */; };
+		F78371AD255545180085D2E5 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371A6255545180085D2E5 /* UICollectionView+Extensions.swift */; };
+		F78371AE255545180085D2E5 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371A7255545180085D2E5 /* UIView+Extensions.swift */; };
+		F78371B22555455F0085D2E5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371B12555455F0085D2E5 /* AppCoordinator.swift */; };
+		F78371B52555457F0085D2E5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371B42555457F0085D2E5 /* Constants.swift */; };
+		F78371BB255545D70085D2E5 /* BookmarksCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371BA255545D70085D2E5 /* BookmarksCoordinator.swift */; };
+		F78371BE255545E40085D2E5 /* PokemonListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371BD255545E40085D2E5 /* PokemonListCoordinator.swift */; };
+		F78371C4255546680085D2E5 /* RealRedditServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371C1255546680085D2E5 /* RealRedditServices.swift */; };
+		F78371C5255546680085D2E5 /* MockRedditServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371C2255546680085D2E5 /* MockRedditServices.swift */; };
+		F78371C6255546680085D2E5 /* MockMapOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371C3255546680085D2E5 /* MockMapOperation.swift */; };
+		F78371CD2555471F0085D2E5 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371CC2555471F0085D2E5 /* AppError.swift */; };
+		F78371D02555472D0085D2E5 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371CF2555472D0085D2E5 /* Pokemon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F72AF658255589050010E573 /* BookmarksManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarksManager.swift; sourceTree = "<group>"; };
+		F72AF65B2555893B0010E573 /* UserDefaultsConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsConfig.swift; sourceTree = "<group>"; };
+		F72AF65E2555899E0010E573 /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
+		F72AF66525558A8D0010E573 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
+		F72AF66825558B760010E573 /* WhiteNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteNavigationController.swift; sourceTree = "<group>"; };
+		F72AF66B25558B830010E573 /* MainTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
+		F72AF66E25558BE30010E573 /* PokemonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListView.swift; sourceTree = "<group>"; };
+		F72AF69525558DB30010E573 /* PokemonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewModel.swift; sourceTree = "<group>"; };
+		F72AF6992555950D0010E573 /* pokemons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokemons.json; sourceTree = "<group>"; };
+		F72AF69E2555966C0010E573 /* PokemonListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListTableViewCell.swift; sourceTree = "<group>"; };
+		F72AF6A2255597650010E573 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
 		F78371742555426A0085D2E5 /* PokeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78371772555426A0085D2E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F783717B2555426A0085D2E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F783717B2555426A0085D2E5 /* PokemonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewController.swift; sourceTree = "<group>"; };
 		F78371802555426C0085D2E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F78371832555426C0085D2E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F78371852555426C0085D2E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7837198255544EA0085D2E5 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		F7837199255544EA0085D2E5 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F783719A255544EA0085D2E5 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		F783719B255544EA0085D2E5 /* RedditServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditServices.swift; sourceTree = "<group>"; };
+		F78371A2255545180085D2E5 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		F78371A3255545180085D2E5 /* Int+Etensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Etensions.swift"; sourceTree = "<group>"; };
+		F78371A4255545180085D2E5 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		F78371A5255545180085D2E5 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		F78371A6255545180085D2E5 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		F78371A7255545180085D2E5 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		F78371B12555455F0085D2E5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		F78371B42555457F0085D2E5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F78371BA255545D70085D2E5 /* BookmarksCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCoordinator.swift; sourceTree = "<group>"; };
+		F78371BD255545E40085D2E5 /* PokemonListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListCoordinator.swift; sourceTree = "<group>"; };
+		F78371C1255546680085D2E5 /* RealRedditServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealRedditServices.swift; sourceTree = "<group>"; };
+		F78371C2255546680085D2E5 /* MockRedditServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRedditServices.swift; sourceTree = "<group>"; };
+		F78371C3255546680085D2E5 /* MockMapOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMapOperation.swift; sourceTree = "<group>"; };
+		F78371CC2555471F0085D2E5 /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		F78371CF2555472D0085D2E5 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,12 +88,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F72AF69325558CB90010E573 /* Anchorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F72AF69D255596560010E573 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F72AF69E2555966C0010E573 /* PokemonListTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		F783716B2555426A0085D2E5 = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +122,11 @@
 		F78371762555426A0085D2E5 /* PokeApp */ = {
 			isa = PBXGroup;
 			children = (
+				F78371C0255546510085D2E5 /* Services */,
+				F78371A12555450D0085D2E5 /* Extensions */,
+				F7837197255544DE0085D2E5 /* Protocols */,
+				F7837196255544B30085D2E5 /* Models */,
+				F78371932555447C0085D2E5 /* Coordinators */,
 				F783718F255542FC0085D2E5 /* Storyboards */,
 				F783718E255542E40085D2E5 /* Resources */,
 				F783718D255542DF0085D2E5 /* Scenes */,
@@ -63,6 +138,7 @@
 		F783718C255542C80085D2E5 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				F78371B42555457F0085D2E5 /* Constants.swift */,
 				F78371852555426C0085D2E5 /* Info.plist */,
 				F78371772555426A0085D2E5 /* AppDelegate.swift */,
 			);
@@ -72,7 +148,9 @@
 		F783718D255542DF0085D2E5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				F783717B2555426A0085D2E5 /* ViewController.swift */,
+				F72AF66825558B760010E573 /* WhiteNavigationController.swift */,
+				F78371B8255545B50085D2E5 /* Bookmarks */,
+				F78371B7255545A80085D2E5 /* Pokemon List */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -80,6 +158,7 @@
 		F783718E255542E40085D2E5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F72AF6992555950D0010E573 /* pokemons.json */,
 				F78371802555426C0085D2E5 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -91,6 +170,83 @@
 				F78371822555426C0085D2E5 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F78371932555447C0085D2E5 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				F78371B12555455F0085D2E5 /* AppCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		F7837196255544B30085D2E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F72AF66B25558B830010E573 /* MainTheme.swift */,
+				F72AF65E2555899E0010E573 /* Agent.swift */,
+				F72AF65B2555893B0010E573 /* UserDefaultsConfig.swift */,
+				F72AF658255589050010E573 /* BookmarksManager.swift */,
+				F78371CC2555471F0085D2E5 /* AppError.swift */,
+				F78371CF2555472D0085D2E5 /* Pokemon.swift */,
+				F72AF6A2255597650010E573 /* PokemonViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F7837197255544DE0085D2E5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F7837199255544EA0085D2E5 /* Coordinator.swift */,
+				F7837198255544EA0085D2E5 /* Localizable.swift */,
+				F783719B255544EA0085D2E5 /* RedditServices.swift */,
+				F783719A255544EA0085D2E5 /* ReusableView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F78371A12555450D0085D2E5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F78371A3255545180085D2E5 /* Int+Etensions.swift */,
+				F78371A5255545180085D2E5 /* String+Extensions.swift */,
+				F78371A6255545180085D2E5 /* UICollectionView+Extensions.swift */,
+				F78371A2255545180085D2E5 /* UIImageView+Extensions.swift */,
+				F78371A4255545180085D2E5 /* UITableView+Extensions.swift */,
+				F78371A7255545180085D2E5 /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F78371B7255545A80085D2E5 /* Pokemon List */ = {
+			isa = PBXGroup;
+			children = (
+				F72AF69D255596560010E573 /* Cells */,
+				F78371BD255545E40085D2E5 /* PokemonListCoordinator.swift */,
+				F783717B2555426A0085D2E5 /* PokemonListViewController.swift */,
+				F72AF66E25558BE30010E573 /* PokemonListView.swift */,
+				F72AF69525558DB30010E573 /* PokemonListViewModel.swift */,
+			);
+			path = "Pokemon List";
+			sourceTree = "<group>";
+		};
+		F78371B8255545B50085D2E5 /* Bookmarks */ = {
+			isa = PBXGroup;
+			children = (
+				F78371BA255545D70085D2E5 /* BookmarksCoordinator.swift */,
+				F72AF66525558A8D0010E573 /* BookmarksViewController.swift */,
+			);
+			path = Bookmarks;
+			sourceTree = "<group>";
+		};
+		F78371C0255546510085D2E5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F78371C3255546680085D2E5 /* MockMapOperation.swift */,
+				F78371C2255546680085D2E5 /* MockRedditServices.swift */,
+				F78371C1255546680085D2E5 /* RealRedditServices.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +265,9 @@
 			dependencies = (
 			);
 			name = PokeApp;
+			packageProductDependencies = (
+				F72AF69225558CB90010E573 /* Anchorage */,
+			);
 			productName = PokeApp;
 			productReference = F78371742555426A0085D2E5 /* PokeApp.app */;
 			productType = "com.apple.product-type.application";
@@ -136,6 +295,9 @@
 				Base,
 			);
 			mainGroup = F783716B2555426A0085D2E5;
+			packageReferences = (
+				F72AF69125558CB90010E573 /* XCRemoteSwiftPackageReference "Anchorage" */,
+			);
 			productRefGroup = F78371752555426A0085D2E5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -151,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F78371842555426C0085D2E5 /* LaunchScreen.storyboard in Resources */,
+				F72AF69A2555950D0010E573 /* pokemons.json in Resources */,
 				F78371812555426C0085D2E5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,8 +325,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F783717C2555426A0085D2E5 /* ViewController.swift in Sources */,
+				F78371AC255545180085D2E5 /* String+Extensions.swift in Sources */,
+				F72AF66F25558BE30010E573 /* PokemonListView.swift in Sources */,
+				F78371AB255545180085D2E5 /* UITableView+Extensions.swift in Sources */,
+				F78371BE255545E40085D2E5 /* PokemonListCoordinator.swift in Sources */,
+				F78371BB255545D70085D2E5 /* BookmarksCoordinator.swift in Sources */,
+				F72AF65F2555899E0010E573 /* Agent.swift in Sources */,
+				F72AF66625558A8D0010E573 /* BookmarksViewController.swift in Sources */,
+				F72AF659255589050010E573 /* BookmarksManager.swift in Sources */,
+				F72AF65C2555893B0010E573 /* UserDefaultsConfig.swift in Sources */,
+				F783719D255544EA0085D2E5 /* Coordinator.swift in Sources */,
+				F78371A9255545180085D2E5 /* UIImageView+Extensions.swift in Sources */,
+				F78371AD255545180085D2E5 /* UICollectionView+Extensions.swift in Sources */,
+				F78371CD2555471F0085D2E5 /* AppError.swift in Sources */,
+				F78371B52555457F0085D2E5 /* Constants.swift in Sources */,
+				F783719E255544EA0085D2E5 /* ReusableView.swift in Sources */,
+				F78371C4255546680085D2E5 /* RealRedditServices.swift in Sources */,
+				F78371D02555472D0085D2E5 /* Pokemon.swift in Sources */,
+				F78371B22555455F0085D2E5 /* AppCoordinator.swift in Sources */,
+				F78371AE255545180085D2E5 /* UIView+Extensions.swift in Sources */,
+				F783717C2555426A0085D2E5 /* PokemonListViewController.swift in Sources */,
+				F78371AA255545180085D2E5 /* Int+Etensions.swift in Sources */,
+				F72AF69F2555966C0010E573 /* PokemonListTableViewCell.swift in Sources */,
+				F783719C255544EA0085D2E5 /* Localizable.swift in Sources */,
 				F78371782555426A0085D2E5 /* AppDelegate.swift in Sources */,
+				F72AF6A3255597650010E573 /* PokemonViewModel.swift in Sources */,
+				F78371C5255546680085D2E5 /* MockRedditServices.swift in Sources */,
+				F72AF66925558B760010E573 /* WhiteNavigationController.swift in Sources */,
+				F78371C6255546680085D2E5 /* MockMapOperation.swift in Sources */,
+				F72AF66C25558B830010E573 /* MainTheme.swift in Sources */,
+				F72AF69625558DB30010E573 /* PokemonListViewModel.swift in Sources */,
+				F783719F255544EA0085D2E5 /* RedditServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +549,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F72AF69125558CB90010E573 /* XCRemoteSwiftPackageReference "Anchorage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Rightpoint/Anchorage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F72AF69225558CB90010E573 /* Anchorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F72AF69125558CB90010E573 /* XCRemoteSwiftPackageReference "Anchorage" */;
+			productName = Anchorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F783716C2555426A0085D2E5 /* Project object */;
 }

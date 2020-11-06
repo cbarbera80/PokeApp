@@ -11,13 +11,20 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private var coordinator: AppCoordinator?
+    private let theme = MainTheme()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
        
-        let navigation = UINavigationController(rootViewController: ViewController())
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navigation
-        window?.makeKeyAndVisible()
+        // Theme
+        theme.setupAppearance()
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let services = MockPokemonServices()
+        let appCoordinator = AppCoordinator(withWindow: window, services: services)
+        appCoordinator.start()
+        coordinator = appCoordinator
+        
         return true
     }
 }
