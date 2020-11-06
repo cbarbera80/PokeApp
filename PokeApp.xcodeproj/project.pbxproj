@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F78371782555426A0085D2E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371772555426A0085D2E5 /* AppDelegate.swift */; };
-		F783717A2555426A0085D2E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371792555426A0085D2E5 /* SceneDelegate.swift */; };
 		F783717C2555426A0085D2E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F783717B2555426A0085D2E5 /* ViewController.swift */; };
-		F783717F2555426A0085D2E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F783717D2555426A0085D2E5 /* Main.storyboard */; };
 		F78371812555426C0085D2E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F78371802555426C0085D2E5 /* Assets.xcassets */; };
 		F78371842555426C0085D2E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F78371822555426C0085D2E5 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,9 +16,7 @@
 /* Begin PBXFileReference section */
 		F78371742555426A0085D2E5 /* PokeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78371772555426A0085D2E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F78371792555426A0085D2E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F783717B2555426A0085D2E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F783717E2555426A0085D2E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F78371802555426C0085D2E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F78371832555426C0085D2E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F78371852555426C0085D2E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,15 +52,45 @@
 		F78371762555426A0085D2E5 /* PokeApp */ = {
 			isa = PBXGroup;
 			children = (
-				F78371772555426A0085D2E5 /* AppDelegate.swift */,
-				F78371792555426A0085D2E5 /* SceneDelegate.swift */,
-				F783717B2555426A0085D2E5 /* ViewController.swift */,
-				F783717D2555426A0085D2E5 /* Main.storyboard */,
-				F78371802555426C0085D2E5 /* Assets.xcassets */,
-				F78371822555426C0085D2E5 /* LaunchScreen.storyboard */,
-				F78371852555426C0085D2E5 /* Info.plist */,
+				F783718F255542FC0085D2E5 /* Storyboards */,
+				F783718E255542E40085D2E5 /* Resources */,
+				F783718D255542DF0085D2E5 /* Scenes */,
+				F783718C255542C80085D2E5 /* Application */,
 			);
 			path = PokeApp;
+			sourceTree = "<group>";
+		};
+		F783718C255542C80085D2E5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F78371852555426C0085D2E5 /* Info.plist */,
+				F78371772555426A0085D2E5 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F783718D255542DF0085D2E5 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F783717B2555426A0085D2E5 /* ViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F783718E255542E40085D2E5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F78371802555426C0085D2E5 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F783718F255542FC0085D2E5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F78371822555426C0085D2E5 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +152,6 @@
 			files = (
 				F78371842555426C0085D2E5 /* LaunchScreen.storyboard in Resources */,
 				F78371812555426C0085D2E5 /* Assets.xcassets in Resources */,
-				F783717F2555426A0085D2E5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,21 +164,12 @@
 			files = (
 				F783717C2555426A0085D2E5 /* ViewController.swift in Sources */,
 				F78371782555426A0085D2E5 /* AppDelegate.swift in Sources */,
-				F783717A2555426A0085D2E5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F783717D2555426A0085D2E5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F783717E2555426A0085D2E5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F78371822555426C0085D2E5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -287,7 +303,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = PokeApp/Info.plist;
+				INFOPLIST_FILE = PokeApp/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,7 +322,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = PokeApp/Info.plist;
+				INFOPLIST_FILE = PokeApp/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
