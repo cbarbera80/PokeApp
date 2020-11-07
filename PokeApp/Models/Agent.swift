@@ -1,9 +1,9 @@
 //
 //  Agent.swift
-//  IQUIIGalleryApp
+//  PokeApp
 //
 //  Created by claudio barbera on 15/07/2020.
-//  Copyright © 2020 iquii. All rights reserved.
+//  Copyright © 2020 Claudio Barbera. All rights reserved.
 //
 
 import Foundation
@@ -22,7 +22,8 @@ struct Agent {
             data, response, error in
             
             DispatchQueue.main.async {
-                if let data = data, let model = try? self.decoder.decode(decoding, from: data) {
+                if let data = data {
+                    let model = try! self.decoder.decode(decoding, from: data)
                     completion(model, nil)
                 } else if let error = error {
                     completion(nil, error)

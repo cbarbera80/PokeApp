@@ -1,9 +1,9 @@
 //
 //  MockMapOperation.swift
-//  IQUIIGalleryApp
+//  PokeApp
 //
 //  Created by claudio barbera on 15/07/2020.
-//  Copyright © 2020 iquii. All rights reserved.
+//  Copyright © 2020 Claudio Barbera. All rights reserved.
 //
 
 import Foundation

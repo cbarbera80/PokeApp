@@ -15,11 +15,15 @@ struct PokemonViewModel {
     }
     
     var pokemonNameText: String {
-        return pokemon.name
+        return pokemon.name.capitalized
     }
     
     var pokemonImageURL: URL? {
         guard let id = pokemon.id else { return nil }
         return Constants.baseImageURL.appendingPathComponent("\(id).png")
+    }
+    
+    var id: String? {
+        return pokemon.id
     }
 }

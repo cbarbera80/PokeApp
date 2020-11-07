@@ -1,9 +1,9 @@
 //
-//  RealRedditServices.swift
-//  IQUIIGalleryApp
+//  RealPokemonServices.swift
+//  PokeApp
 //
 //  Created by claudio barbera on 15/07/2020.
-//  Copyright © 2020 iquii. All rights reserved.
+//  Copyright © 2020 Claudio Barbera. All rights reserved.
 //
 
 import Foundation
@@ -36,6 +36,22 @@ class RealPokemonServices: PokemonServices {
         urlRequest.cachePolicy = .returnCacheDataElseLoad
         
         agent.getData(from: urlRequest, decoding: PokemonResponse.self) { data, error in
+            if let data = data {
+                completion(.success(data))
+            } else if let error = error {
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func getPokemon(withId id: String, completion: @escaping (Result<PokemonDetails, Error>) -> Void) {
+    
+        let url = Constants.baseURL.appendingPathComponent("/pokemon/\(id)")
+        var urlRequest = URLRequest(url: url)
+        
+        urlRequest.cachePolicy = .returnCacheDataElseLoad
+        
+        agent.getData(from: urlRequest, decoding: PokemonDetails.self) { data, error in
             if let data = data {
                 completion(.success(data))
             } else if let error = error {

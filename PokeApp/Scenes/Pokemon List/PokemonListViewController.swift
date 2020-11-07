@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol PokemonListViewControllerDelegate: class {
+    func openDetails(withId id: String)
+}
+
 class PokemonListViewController: UIViewController {
     
     // MARK: - UI properties
@@ -17,7 +21,8 @@ class PokemonListViewController: UIViewController {
     
     // MARK: - Business properties
     private let viewModel: PokemonListViewModel
-
+    weak var delegate: PokemonListViewControllerDelegate?
+    
     // MARK: - Object lifecycle
     
     init(withViewModel viewModel: PokemonListViewModel) {
@@ -52,6 +57,8 @@ class PokemonListViewController: UIViewController {
         _view?.tableView.dataSource = self
         _view?.tableView.delegate = self
         _view?.tableView.register(PokemonListTableViewCell.self)
+        _view?.tableView.contentInsetAdjustmentBehavior = .always
+        edgesForExtendedLayout = .all
     }
     
     private func refreshUI(with state: PokemonListViewModel.PokemonListViewState) {
@@ -93,7 +100,8 @@ extension PokemonListViewController: UITableViewDelegate {
         }
     }
     
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let id = viewModel.pokemonViewModels[indexPath.row].id else { return }
+        delegate?.openDetails(withId: id)
     }
 }

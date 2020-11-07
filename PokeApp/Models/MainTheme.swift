@@ -1,9 +1,9 @@
 //
 //  MainTheme.swift
-//  IQUIIGalleryApp
+//  PokeApp
 //
 //  Created by claudio barbera on 16/07/2020.
-//  Copyright © 2020 iquii. All rights reserved.
+//  Copyright © 2020 Claudio Barbera. All rights reserved.
 //
 
 import UIKit
@@ -11,22 +11,23 @@ import UIKit
 struct MainTheme {
     
     func setupAppearance() {
-        
-        setupNavigationAppearance(for: WhiteNavigationController.self, withTintColor: UIColor(named: "primary")!, andBarTintColor: .white, isTraslucent: true)
+        setupNavigationAppearance(for: ClearNavigationController.self, withTintColor: .black, andBarTintColor: .clear, isTraslucent: true)
     }
     
-    private func setupNavigationAppearance<T: UIAppearanceContainer>(for appearanceContainer: T.Type, withTintColor tintColor: UIColor, andBarTintColor barTintColor: UIColor, isTraslucent: Bool) {
+    private func setupNavigationAppearance<T: UIAppearanceContainer>(for appearanceContainer: T.Type,
+                                                                     withTintColor tintColor: UIColor,
+                                                                     andBarTintColor barTintColor: UIColor,
+                                                                     isTraslucent: Bool) {
         
         let navigationBarAppearance = UINavigationBar.appearance(whenContainedInInstancesOf: [appearanceContainer])
         
         navigationBarAppearance.isTranslucent = isTraslucent
         navigationBarAppearance.tintColor = tintColor
         navigationBarAppearance.barTintColor = barTintColor
+        navigationBarAppearance.setBackgroundImage(UIImage(), for: .default)
+        navigationBarAppearance.shadowImage = UIImage()
+        navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: tintColor]
 
-        navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .bold), NSAttributedString.Key.foregroundColor: tintColor]
-        
-        navigationBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 37, weight: .bold), NSAttributedString.Key.foregroundColor: tintColor]
-        
-        
     }
+    
 }

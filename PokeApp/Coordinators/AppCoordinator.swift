@@ -11,7 +11,6 @@ class AppCoordinator: Coordinator {
     
     let window: UIWindow
     var coordinators: [Coordinator] = []
-    private let navigator = UINavigationController()
     private let bookmarksManager = BookmarkManager()
     private let services: PokemonServices
      

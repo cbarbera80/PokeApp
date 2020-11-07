@@ -3,7 +3,7 @@
 //  PokeApp
 //
 //  Created by claudio barbera
-//  Copyright © 2020 iqui All rights reserved.
+//  Copyright © 2020 Claudio Barbera All rights reserved.
 //
 
 

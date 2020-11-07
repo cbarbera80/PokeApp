@@ -21,9 +21,9 @@ class BookmarksCoordinator: Coordinator {
     init(bookmarkManager: BookmarkManager) {
         self.bookmarkManager = bookmarkManager
         viewController = BookmarksViewController()
-        navigation = UINavigationController(rootViewController: viewController)
+        navigation = ClearNavigationController(rootViewController: viewController)
         navigation.navigationBar.prefersLargeTitles = true
-        navigation.tabBarItem = UITabBarItem(title: "Bookmarks".localized, image: nil, selectedImage: nil)
+        navigation.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
     }
     
     func start() {
