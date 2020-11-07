@@ -53,6 +53,7 @@ class PokemonDetailsView: UIView {
         view.image = UIImage(named: "placeholder")
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
+        view.layer.cornerRadius = 75
         return view
     }()
     
@@ -80,7 +81,7 @@ class PokemonDetailsView: UIView {
     lazy var abilitiesLabel: UILabel = {
         let view = UILabel()
         view.font = .boldSystemFont(ofSize: 18)
-        view.text = "Abilities"
+        view.text = "Abilities".localized
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -94,7 +95,7 @@ class PokemonDetailsView: UIView {
     lazy var statsLabel: UILabel = {
         let view = UILabel()
         view.font = .boldSystemFont(ofSize: 18)
-        view.text = "Statistics"
+        view.text = "Statistics".localized
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -108,7 +109,7 @@ class PokemonDetailsView: UIView {
     lazy var typesLabel: UILabel = {
         let view = UILabel()
         view.font = .boldSystemFont(ofSize: 18)
-        view.text = "Types"
+        view.text = "Types".localized
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -250,11 +251,13 @@ class PokemonDetailsView: UIView {
     func startLoading() {
         loadingView.isHidden = false
         loadingIndicator.startAnimating()
+        cardView.isHidden = true
     }
     
     func stopLoading() {
         loadingView.isHidden = true
         loadingIndicator.stopAnimating()
+        cardView.isHidden = false
     }
 
 }

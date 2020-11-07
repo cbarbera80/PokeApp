@@ -26,12 +26,12 @@ struct PokemonDetailViewModel {
     
     var heightText: String {
         // height is expressed in decimeters
-        return "Height: \(pokemon.height / 10) m"
+        return "\("Height".localized): \(pokemon.height / 10) m"
     }
     
     var weightText: String {
         // weight is expressed in hectograms
-        return "Weigth: \(pokemon.weight / 10) kg"
+        return "\("Weigth".localized) \(pokemon.weight / 10) kg"
     }
     
     var abilities: [String] {

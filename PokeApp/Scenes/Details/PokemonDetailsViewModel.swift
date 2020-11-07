@@ -36,6 +36,8 @@ class PokemonDetailsViewModel {
     // MARK: - Business
     func loadData() {
     
+        state = .loading
+        
         services.getPokemon(withId: id) { [weak self] res in
             switch res {
             case .success(let response):
