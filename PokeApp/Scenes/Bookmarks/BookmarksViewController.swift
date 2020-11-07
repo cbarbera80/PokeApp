@@ -59,6 +59,7 @@ class BookmarksViewController: UIViewController {
         _view?.tableView.delegate = self
         _view?.tableView.register(PokemonListTableViewCell.self)
         _view?.tableView.contentInsetAdjustmentBehavior = .always
+        _view?.emptyView.isHidden = !viewModel.isEmpty
         edgesForExtendedLayout = .all
     }
 }
