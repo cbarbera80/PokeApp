@@ -19,4 +19,9 @@ struct PokemonResponse: Codable {
 struct Pokemon: Codable, Hashable {
     let name: String
     let url: String
+    
+    var id: String? {
+        guard let url = URL(string: url) else { return nil }
+        return url.lastPathComponent.strippingExtension
+    }
 }

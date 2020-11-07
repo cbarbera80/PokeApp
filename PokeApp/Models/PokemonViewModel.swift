@@ -17,4 +17,9 @@ struct PokemonViewModel {
     var pokemonNameText: String {
         return pokemon.name
     }
+    
+    var pokemonImageURL: URL? {
+        guard let id = pokemon.id else { return nil }
+        return Constants.baseImageURL.appendingPathComponent("\(id).png")
+    }
 }

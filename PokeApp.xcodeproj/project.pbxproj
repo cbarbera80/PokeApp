@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,6 @@
 		F72AF66925558B760010E573 /* WhiteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AF66825558B760010E573 /* WhiteNavigationController.swift */; };
 		F72AF66C25558B830010E573 /* MainTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AF66B25558B830010E573 /* MainTheme.swift */; };
 		F72AF66F25558BE30010E573 /* PokemonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AF66E25558BE30010E573 /* PokemonListView.swift */; };
-		F72AF69325558CB90010E573 /* Anchorage in Frameworks */ = {isa = PBXBuildFile; productRef = F72AF69225558CB90010E573 /* Anchorage */; };
 		F72AF69625558DB30010E573 /* PokemonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AF69525558DB30010E573 /* PokemonListViewModel.swift */; };
 		F72AF69A2555950D0010E573 /* pokemons.json in Resources */ = {isa = PBXBuildFile; fileRef = F72AF6992555950D0010E573 /* pokemons.json */; };
 		F72AF69F2555966C0010E573 /* PokemonListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AF69E2555966C0010E573 /* PokemonListTableViewCell.swift */; };
@@ -37,8 +36,8 @@
 		F78371B52555457F0085D2E5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371B42555457F0085D2E5 /* Constants.swift */; };
 		F78371BB255545D70085D2E5 /* BookmarksCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371BA255545D70085D2E5 /* BookmarksCoordinator.swift */; };
 		F78371BE255545E40085D2E5 /* PokemonListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371BD255545E40085D2E5 /* PokemonListCoordinator.swift */; };
-		F78371C4255546680085D2E5 /* RealRedditServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371C1255546680085D2E5 /* RealRedditServices.swift */; };
-		F78371C5255546680085D2E5 /* MockRedditServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371C2255546680085D2E5 /* MockRedditServices.swift */; };
+		F78371C4255546680085D2E5 /* RealPokemonServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371C1255546680085D2E5 /* RealPokemonServices.swift */; };
+		F78371C5255546680085D2E5 /* MockPokemonServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371C2255546680085D2E5 /* MockPokemonServices.swift */; };
 		F78371C6255546680085D2E5 /* MockMapOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371C3255546680085D2E5 /* MockMapOperation.swift */; };
 		F78371CD2555471F0085D2E5 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371CC2555471F0085D2E5 /* AppError.swift */; };
 		F78371D02555472D0085D2E5 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371CF2555472D0085D2E5 /* Pokemon.swift */; };
@@ -76,8 +75,8 @@
 		F78371B42555457F0085D2E5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F78371BA255545D70085D2E5 /* BookmarksCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCoordinator.swift; sourceTree = "<group>"; };
 		F78371BD255545E40085D2E5 /* PokemonListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListCoordinator.swift; sourceTree = "<group>"; };
-		F78371C1255546680085D2E5 /* RealRedditServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealRedditServices.swift; sourceTree = "<group>"; };
-		F78371C2255546680085D2E5 /* MockRedditServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRedditServices.swift; sourceTree = "<group>"; };
+		F78371C1255546680085D2E5 /* RealPokemonServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealPokemonServices.swift; sourceTree = "<group>"; };
+		F78371C2255546680085D2E5 /* MockPokemonServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPokemonServices.swift; sourceTree = "<group>"; };
 		F78371C3255546680085D2E5 /* MockMapOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMapOperation.swift; sourceTree = "<group>"; };
 		F78371CC2555471F0085D2E5 /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		F78371CF2555472D0085D2E5 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
@@ -88,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F72AF69325558CB90010E573 /* Anchorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,8 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				F78371C3255546680085D2E5 /* MockMapOperation.swift */,
-				F78371C2255546680085D2E5 /* MockRedditServices.swift */,
-				F78371C1255546680085D2E5 /* RealRedditServices.swift */,
+				F78371C2255546680085D2E5 /* MockPokemonServices.swift */,
+				F78371C1255546680085D2E5 /* RealPokemonServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -266,7 +264,6 @@
 			);
 			name = PokeApp;
 			packageProductDependencies = (
-				F72AF69225558CB90010E573 /* Anchorage */,
 			);
 			productName = PokeApp;
 			productReference = F78371742555426A0085D2E5 /* PokeApp.app */;
@@ -296,7 +293,6 @@
 			);
 			mainGroup = F783716B2555426A0085D2E5;
 			packageReferences = (
-				F72AF69125558CB90010E573 /* XCRemoteSwiftPackageReference "Anchorage" */,
 			);
 			productRefGroup = F78371752555426A0085D2E5 /* Products */;
 			projectDirPath = "";
@@ -340,7 +336,7 @@
 				F78371CD2555471F0085D2E5 /* AppError.swift in Sources */,
 				F78371B52555457F0085D2E5 /* Constants.swift in Sources */,
 				F783719E255544EA0085D2E5 /* ReusableView.swift in Sources */,
-				F78371C4255546680085D2E5 /* RealRedditServices.swift in Sources */,
+				F78371C4255546680085D2E5 /* RealPokemonServices.swift in Sources */,
 				F78371D02555472D0085D2E5 /* Pokemon.swift in Sources */,
 				F78371B22555455F0085D2E5 /* AppCoordinator.swift in Sources */,
 				F78371AE255545180085D2E5 /* UIView+Extensions.swift in Sources */,
@@ -350,7 +346,7 @@
 				F783719C255544EA0085D2E5 /* Localizable.swift in Sources */,
 				F78371782555426A0085D2E5 /* AppDelegate.swift in Sources */,
 				F72AF6A3255597650010E573 /* PokemonViewModel.swift in Sources */,
-				F78371C5255546680085D2E5 /* MockRedditServices.swift in Sources */,
+				F78371C5255546680085D2E5 /* MockPokemonServices.swift in Sources */,
 				F72AF66925558B760010E573 /* WhiteNavigationController.swift in Sources */,
 				F78371C6255546680085D2E5 /* MockMapOperation.swift in Sources */,
 				F72AF66C25558B830010E573 /* MainTheme.swift in Sources */,
@@ -549,25 +545,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		F72AF69125558CB90010E573 /* XCRemoteSwiftPackageReference "Anchorage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Rightpoint/Anchorage";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.5.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		F72AF69225558CB90010E573 /* Anchorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F72AF69125558CB90010E573 /* XCRemoteSwiftPackageReference "Anchorage" */;
-			productName = Anchorage;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F783716C2555426A0085D2E5 /* Project object */;
 }

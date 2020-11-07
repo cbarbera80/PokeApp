@@ -17,7 +17,7 @@ class PokemonListViewController: UIViewController {
     
     // MARK: - Business properties
     private let viewModel: PokemonListViewModel
-    
+
     // MARK: - Object lifecycle
     
     init(withViewModel viewModel: PokemonListViewModel) {
@@ -58,8 +58,7 @@ class PokemonListViewController: UIViewController {
         switch state {
         case .loading:
             _view?.startLoading()
-        case .loadingNextPage:
-            print("load next page")
+        case .loadingNextPage: break
         case .idle:
             _view?.stopLoading()
         case .loaded:
@@ -69,9 +68,6 @@ class PokemonListViewController: UIViewController {
             _view?.stopLoading()
         }
     }
-    
-    // MARK: - User interactions
-    
 }
 
 extension PokemonListViewController: UITableViewDataSource {
@@ -91,13 +87,13 @@ extension PokemonListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        guard viewModel.hasMoreData else { return }
-        
-        let lastElement = viewModel.pokemonViewModels.count - 5
-        
-        if indexPath.row == lastElement {
+        if viewModel.hasMoreData, indexPath.row == viewModel.pokemonViewModels.count - 5 {
             viewModel.loadNextPage()
             _view?.showLoadMoreIndicator()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
     }
 }

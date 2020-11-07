@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         theme.setupAppearance()
         
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let services = MockPokemonServices()
+        let services = RealPokemonServices()
         let appCoordinator = AppCoordinator(withWindow: window, services: services)
         appCoordinator.start()
         coordinator = appCoordinator

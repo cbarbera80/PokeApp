@@ -12,4 +12,5 @@ struct Constants {
     static let diskCacheSize = 10
     static let pageSize = 20
     static let baseURL = URL(string: "https://pokeapi.co/api/v2")!
+    static let baseImageURL = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back")!
 }

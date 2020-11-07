@@ -5,7 +5,7 @@
 //  Created by Claudio Barbera on 06/11/2020.
 //
 
-import Anchorage
+import UIKit
 
 class PokemonListView: UIView {
     
@@ -19,6 +19,7 @@ class PokemonListView: UIView {
     
     lazy var tableView: UITableView = {
         let table = UITableView()
+        table.translatesAutoresizingMaskIntoConstraints = false
         table.tableFooterView = tableFooterIndicator
         table.tableFooterView?.isHidden = false
         return table
@@ -26,12 +27,14 @@ class PokemonListView: UIView {
     
     lazy var loadingView: UIView = {
         let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         return view
     }()
     
     lazy var loadingIndicator: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.hidesWhenStopped = true
         return view
     }()
@@ -64,15 +67,25 @@ class PokemonListView: UIView {
     }
 
     private func configureConstraints() {
-        // tableView
-        tableView.edgeAnchors == edgeAnchors
         
-        // loadingView
-        loadingView.edgeAnchors == edgeAnchors
-        
-        // loadingIndicator
-        loadingIndicator.centerYAnchor == loadingView.centerYAnchor
-        loadingIndicator.centerXAnchor == loadingView.centerXAnchor
+        NSLayoutConstraint.activate([
+            
+            // tableView
+            tableView.topAnchor.constraint(equalTo: topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            
+            // loadingView
+            loadingView.topAnchor.constraint(equalTo: topAnchor),
+            loadingView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            loadingView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            loadingView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            
+            // loadingIndicator
+            loadingIndicator.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor),
+            loadingIndicator.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor)
+        ])
     }
     
     func startLoading() {

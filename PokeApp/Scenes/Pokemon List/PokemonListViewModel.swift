@@ -19,10 +19,10 @@ class PokemonListViewModel {
     
     // MARK: - Vars
     private let services: PokemonServices
-    var hasMoreData = false
     private var currentPage = 0
-    
+    var hasMoreData = false
     var pokemonViewModels: [PokemonViewModel] = []
+    var onStateChange: ((PokemonListViewState) -> Void)?
     
     var state: PokemonListViewState = .idle {
         didSet {
@@ -30,8 +30,7 @@ class PokemonListViewModel {
         }
     }
     
-    var onStateChange: ((PokemonListViewState) -> Void)?
-    
+    // MARK: - Init
     init(withServices services: PokemonServices) {
         self.services = services
     }

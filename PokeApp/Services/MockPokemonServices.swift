@@ -1,5 +1,5 @@
 //
-//  MockRedditServices.swift
+//  MockPokemonServices.swift
 //  IQUIIGalleryApp
 //
 //  Created by claudio barbera on 15/07/2020.
@@ -9,7 +9,7 @@
 import Foundation
 
 class MockPokemonServices: PokemonServices {
-    
+   
     func getPokemons(page: Int, completion: @escaping (Result<PokemonResponse, Error>) -> Void) {
         
         let mock = MockMapOperation<PokemonResponse>()
