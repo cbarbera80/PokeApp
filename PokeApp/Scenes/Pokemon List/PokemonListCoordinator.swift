@@ -22,7 +22,7 @@ class PokemonListCoordinator: Coordinator {
         self.bookmarksManager = bookmarksManager
         navigation = ClearNavigationController(rootViewController: listViewController)
         navigation.navigationBar.prefersLargeTitles = true
-        navigation.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0) // )(title: "Pokemons".localized, image: nil, selectedImage: nil)
+        navigation.tabBarItem = UITabBarItem(title: "Pokemons".localized, image: UIImage(named: "list"), selectedImage: nil)
         
     }
     
@@ -33,8 +33,8 @@ class PokemonListCoordinator: Coordinator {
 
 extension PokemonListCoordinator: PokemonListViewControllerDelegate {
     
-    func openDetails(withId id: String) {
-        detailsCoordinator = PokemonDetailsCoordinator(presenter: listViewController, id: id, services: services, bookmarksManager: bookmarksManager)
+    func openDetails(withId id: String, pokemon: Pokemon) {
+        detailsCoordinator = PokemonDetailsCoordinator(presenter: listViewController, id: id, services: services, bookmarksManager: bookmarksManager, pokemon: pokemon)
         detailsCoordinator?.start()
     }
 }

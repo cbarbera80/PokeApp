@@ -8,7 +8,7 @@
 import Foundation
 
 struct PokemonViewModel {
-    private let pokemon: Pokemon
+    let pokemon: Pokemon
     
     init(withPokemon pokemon: Pokemon) {
         self.pokemon = pokemon

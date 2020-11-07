@@ -43,13 +43,15 @@ class PokemonDetailsViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         viewModel.onStateChange = { [weak self] state in self?.refreshUI(with: state) }
+        viewModel.onBookmarkStateChange = { [weak self] isOn in self?.refreshBookmarksButton(isOn: isOn) }
         viewModel.loadData()
-        navigationItem.largeTitleDisplayMode = .never
+        
     }
     
     // MARK: - Configure methods
     private func configureUI() {
-        
+        navigationItem.largeTitleDisplayMode = .never
+        refreshBookmarksButton(isOn: viewModel.isPokemonBookmarked)
     }
     
     private func refreshUI(with state: PokemonDetailsViewModel.State) {
@@ -64,5 +66,16 @@ class PokemonDetailsViewController: UIViewController {
         case .error:
             _view?.stopLoading()
         }
+    }
+    
+    @objc
+    private func toggleBookmark() {
+        viewModel.toggleFavorites()
+    }
+    
+    func refreshBookmarksButton(isOn: Bool) {
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: isOn ? "pin_fill" : "pin"), style: .plain, target: self, action: #selector(toggleBookmark))
+        
     }
 }

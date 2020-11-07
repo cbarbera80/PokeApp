@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PokemonListViewControllerDelegate: class {
-    func openDetails(withId id: String)
+    func openDetails(withId id: String, pokemon: Pokemon)
 }
 
 class PokemonListViewController: UIViewController {
@@ -23,7 +23,7 @@ class PokemonListViewController: UIViewController {
     private let viewModel: PokemonListViewModel
     weak var delegate: PokemonListViewControllerDelegate?
     
-    // MARK: - Object lifecycle
+    // MARK: - Init
     
     init(withViewModel viewModel: PokemonListViewModel) {
         self.viewModel = viewModel
@@ -102,6 +102,6 @@ extension PokemonListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let id = viewModel.pokemonViewModels[indexPath.row].id else { return }
-        delegate?.openDetails(withId: id)
+        delegate?.openDetails(withId: id, pokemon: viewModel.pokemonViewModels[indexPath.row].pokemon)
     }
 }

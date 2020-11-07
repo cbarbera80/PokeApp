@@ -14,3 +14,7 @@ struct Constants {
     static let baseURL = URL(string: "https://pokeapi.co/api/v2")!
     static let baseImageURL = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back")!
 }
+
+public enum Notifications {
+    public static let bookmarksUpdated = Notification.Name("pokeapp_app.bookmarksUpdated")
+}

@@ -31,7 +31,7 @@ class AppCoordinator: Coordinator {
        
         coordinators.append(listCoordinator)
         
-        let bookmarksCoordinator = BookmarksCoordinator(bookmarkManager: bookmarksManager)
+        let bookmarksCoordinator = BookmarksCoordinator(bookmarkManager: bookmarksManager, services: services)
         coordinators.append(bookmarksCoordinator)
         
         tabBarController.viewControllers = [

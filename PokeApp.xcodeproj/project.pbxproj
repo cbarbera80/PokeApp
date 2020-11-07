@@ -49,6 +49,8 @@
 		F78371D02555472D0085D2E5 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78371CF2555472D0085D2E5 /* Pokemon.swift */; };
 		F7CFCBDD2556B92000D8BC54 /* ScrollingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFCBDC2556B92000D8BC54 /* ScrollingView.swift */; };
 		F7CFCBE12556BCE700D8BC54 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFCBE02556BCE700D8BC54 /* PaddingLabel.swift */; };
+		F7CFCBE52556CB5000D8BC54 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFCBE42556CB5000D8BC54 /* BookmarksView.swift */; };
+		F7CFCBE82556CBA600D8BC54 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFCBE72556CBA600D8BC54 /* BookmarksViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,8 @@
 		F78371CF2555472D0085D2E5 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		F7CFCBDC2556B92000D8BC54 /* ScrollingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingView.swift; sourceTree = "<group>"; };
 		F7CFCBE02556BCE700D8BC54 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		F7CFCBE42556CB5000D8BC54 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
+		F7CFCBE72556CBA600D8BC54 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +188,6 @@
 		F783718D255542DF0085D2E5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				F72AF66825558B760010E573 /* ClearNavigationController.swift */,
 				F78371B8255545B50085D2E5 /* Bookmarks */,
 				F78371B7255545A80085D2E5 /* Pokemon List */,
 				F77624E025569613000CDA44 /* Details */,
@@ -257,11 +260,11 @@
 		F78371B7255545A80085D2E5 /* Pokemon List */ = {
 			isa = PBXGroup;
 			children = (
-				F72AF6A2255597650010E573 /* PokemonViewModel.swift */,
 				F72AF69D255596560010E573 /* Cells */,
 				F78371BD255545E40085D2E5 /* PokemonListCoordinator.swift */,
 				F783717B2555426A0085D2E5 /* PokemonListViewController.swift */,
 				F72AF66E25558BE30010E573 /* PokemonListView.swift */,
+				F72AF6A2255597650010E573 /* PokemonViewModel.swift */,
 				F72AF69525558DB30010E573 /* PokemonListViewModel.swift */,
 			);
 			path = "Pokemon List";
@@ -272,6 +275,8 @@
 			children = (
 				F78371BA255545D70085D2E5 /* BookmarksCoordinator.swift */,
 				F72AF66525558A8D0010E573 /* BookmarksViewController.swift */,
+				F7CFCBE42556CB5000D8BC54 /* BookmarksView.swift */,
+				F7CFCBE72556CBA600D8BC54 /* BookmarksViewModel.swift */,
 			);
 			path = Bookmarks;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 		F7CFCBDB2556B90700D8BC54 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				F72AF66825558B760010E573 /* ClearNavigationController.swift */,
 				F7CFCBDC2556B92000D8BC54 /* ScrollingView.swift */,
 				F7CFCBE02556BCE700D8BC54 /* PaddingLabel.swift */,
 			);
@@ -386,9 +392,11 @@
 				F78371AD255545180085D2E5 /* UICollectionView+Extensions.swift in Sources */,
 				F78371CD2555471F0085D2E5 /* AppError.swift in Sources */,
 				F78371B52555457F0085D2E5 /* Constants.swift in Sources */,
+				F7CFCBE82556CBA600D8BC54 /* BookmarksViewModel.swift in Sources */,
 				F783719E255544EA0085D2E5 /* ReusableView.swift in Sources */,
 				F78371C4255546680085D2E5 /* RealPokemonServices.swift in Sources */,
 				F78371D02555472D0085D2E5 /* Pokemon.swift in Sources */,
+				F7CFCBE52556CB5000D8BC54 /* BookmarksView.swift in Sources */,
 				F78371B22555455F0085D2E5 /* AppCoordinator.swift in Sources */,
 				F7CFCBDD2556B92000D8BC54 /* ScrollingView.swift in Sources */,
 				F77624EC255698F3000CDA44 /* PokemonDetailsView.swift in Sources */,

@@ -19,7 +19,10 @@ class PokemonDetailsViewModel {
     // MARK: - Vars
     private let services: PokemonServices
     private let id: String
+    private let bookmarksManager: BookmarkManager
+    private let pokemon: Pokemon
     var onStateChange: ((State) -> Void)?
+    var onBookmarkStateChange: ((Bool) -> Void)?
     
     var state: State = .idle {
         didSet {
@@ -27,10 +30,16 @@ class PokemonDetailsViewModel {
         }
     }
     
+    var isPokemonBookmarked: Bool {
+        return bookmarksManager.contains(pokemon)
+    }
+    
     // MARK: - Init
-    init(withServices services: PokemonServices, id: String) {
+    init(withServices services: PokemonServices, id: String, bookmarksManager: BookmarkManager, pokemon: Pokemon) {
         self.services = services
         self.id = id
+        self.pokemon = pokemon
+        self.bookmarksManager = bookmarksManager
     }
     
     // MARK: - Business
@@ -46,6 +55,12 @@ class PokemonDetailsViewModel {
                 self?.state = .error
             }
         }
+    }
+    
+    func toggleFavorites() {
+        bookmarksManager.toggleState(pokemon)
+        NotificationCenter.default.post(name: Notifications.bookmarksUpdated, object: nil)
+        onBookmarkStateChange?(bookmarksManager.contains(pokemon))
     }
     
 }

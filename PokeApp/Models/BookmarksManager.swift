@@ -33,6 +33,14 @@ class BookmarkManager {
         UserDefaultsConfig.bookmarks = Array(data)
     }
     
+    func toggleState(_ object: Pokemon) {
+        if contains(object) {
+            remove(object)
+        } else {
+            add(object)
+        }
+    }
+    
     var bookmarks: [Pokemon] {
         return Array(data)
     }

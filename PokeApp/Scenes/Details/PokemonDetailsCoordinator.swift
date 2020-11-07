@@ -14,9 +14,9 @@ class PokemonDetailsCoordinator: Coordinator {
     private let detailsViewController: PokemonDetailsViewController
     private let presenter: UIViewController
     
-    init(presenter: UIViewController, id: String, services: PokemonServices, bookmarksManager: BookmarkManager) {
+    init(presenter: UIViewController, id: String, services: PokemonServices, bookmarksManager: BookmarkManager, pokemon: Pokemon) {
         self.presenter = presenter
-        detailsViewController = PokemonDetailsViewController(withViewModel: .init(withServices: services, id: id))
+        detailsViewController = PokemonDetailsViewController(withViewModel: .init(withServices: services, id: id, bookmarksManager: bookmarksManager, pokemon: pokemon))
     }
     
     func start() {
