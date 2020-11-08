@@ -94,13 +94,29 @@ extension PokemonListViewController: UICollectionViewDataSource {
 extension PokemonListViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let availableWidth = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right))
+//        let availableWidth = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right))
+//
+//        let minWidth: CGFloat = 150
+//        let rows = Int(availableWidth / minWidth)
+//        let additionalPadding = CGFloat(rows) * CGFloat(10)
+//        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + additionalPadding)) / CGFloat(rows)
+//        return CGSize(width: itemSize, height: itemSize)
         
-        let minWidth: CGFloat = 150
-        let rows = Int(availableWidth / minWidth)
-        let additionalPadding = CGFloat(rows) * CGFloat(10)
-        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + additionalPadding)) / CGFloat(rows)
-        return CGSize(width: itemSize, height: itemSize)
+        let width = self.calculateWith()
+        return CGSize(width: width, height: width)
+    }
+    
+    func calculateWith() -> CGFloat {
+        let estimateWidth = 200
+        let cellMarginSize = 16
+        
+        let estimatedWidth = CGFloat(estimateWidth)
+        let cellCount = floor(CGFloat(self.view.frame.size.width / estimatedWidth))
+        
+        let margin = CGFloat(cellMarginSize * 2)
+        let width = (self.view.frame.size.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
+        
+        return width
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
