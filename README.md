@@ -4,18 +4,20 @@
 
 * Xcode 12
 * Swift 5.3
+* iOS 11 target
 
 ## Philosophy
 
-* No Styoryboard 
+* No Storyboards 
 * No View Controller XIB
+* iPhone and iPad compatibility with AutoLayout
 * No pods :)
 * UI by code
 * MVVM+Coordinator
 
 ## Implementation choices
 
-### The app is built using an MVVM + Coordinators architecture.
+The app is built using an MVVM + Coordinators architecture.
 The AppDelegate is kept as lean as possible.
 A routing file, AppCoordinator, is used to coordinate the overall app flows.
 View controllers make use of view models and states.
