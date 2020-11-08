@@ -47,6 +47,7 @@ class PokemonListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        navigationController?.delegate = self
         title = "Pokemons".localized
         viewModel.onStateChange = { [weak self] state in self?.refreshUI(with: state) }
         viewModel.loadData()
@@ -93,11 +94,17 @@ extension PokemonListViewController: UICollectionViewDataSource {
 extension PokemonListViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.width / 2 - 15
-        return .init(width: width, height: width)
+        let availableWidth = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right))
+        
+        let minWidth: CGFloat = 150
+        let rows = Int(availableWidth / minWidth)
+        let additionalPadding = CGFloat(rows) * CGFloat(10)
+        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + additionalPadding)) / CGFloat(rows)
+        return CGSize(width: itemSize, height: itemSize)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.indexPath = indexPath
         guard let id = viewModel.pokemonViewModels[indexPath.item].id else { return }
         delegate?.openDetails(withId: id, pokemon: viewModel.pokemonViewModels[indexPath.row].pokemon)
     }
@@ -105,7 +112,25 @@ extension PokemonListViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if viewModel.hasMoreData, indexPath.row == viewModel.pokemonViewModels.count - 5 {
             viewModel.loadNextPage()
-            _view?.showLoadMoreIndicator()
         }
+    }
+}
+
+//MARK: UINavigationControllerDelegate
+extension PokemonListViewController: UINavigationControllerDelegate {
+  
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return PopInAndOutAnimator(operation: operation)
+    }
+}
+
+//MARK: CollectionPushAndPoppable
+extension PokemonListViewController: CollectionPushAndPoppable {
+    var sourceCell: UICollectionViewCell? {
+        return _view?.collectionView.cellForItem(at: viewModel.indexPath)
+    }
+    
+    var collectionView: UICollectionView? {
+        return _view?.collectionView
     }
 }

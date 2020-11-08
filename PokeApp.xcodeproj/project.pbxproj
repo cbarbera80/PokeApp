@@ -52,6 +52,8 @@
 		F7CFCBE52556CB5000D8BC54 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFCBE42556CB5000D8BC54 /* BookmarksView.swift */; };
 		F7CFCBE82556CBA600D8BC54 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFCBE72556CBA600D8BC54 /* BookmarksViewModel.swift */; };
 		F7CFCBEC2557E1BC00D8BC54 /* PokemonListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFCBEB2557E1BC00D8BC54 /* PokemonListCollectionViewCell.swift */; };
+		F7CFCBF12557EEDF00D8BC54 /* PopInAndOutAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFCBF02557EEDF00D8BC54 /* PopInAndOutAnimator.swift */; };
+		F7CFCBF42557EEF800D8BC54 /* UIView+Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFCBF32557EEF800D8BC54 /* UIView+Screenshot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +104,8 @@
 		F7CFCBE42556CB5000D8BC54 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		F7CFCBE72556CBA600D8BC54 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
 		F7CFCBEB2557E1BC00D8BC54 /* PokemonListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7CFCBF02557EEDF00D8BC54 /* PopInAndOutAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopInAndOutAnimator.swift; sourceTree = "<group>"; };
+		F7CFCBF32557EEF800D8BC54 /* UIView+Screenshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Screenshot.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +122,6 @@
 		F72AF69D255596560010E573 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F72AF69E2555966C0010E573 /* PokemonListTableViewCell.swift */,
 				F7CFCBEB2557E1BC00D8BC54 /* PokemonListCollectionViewCell.swift */,
 			);
 			path = Cells;
@@ -226,6 +229,7 @@
 		F7837196255544B30085D2E5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F7CFCBF02557EEDF00D8BC54 /* PopInAndOutAnimator.swift */,
 				F72AF66B25558B830010E573 /* MainTheme.swift */,
 				F72AF65E2555899E0010E573 /* Agent.swift */,
 				F72AF65B2555893B0010E573 /* UserDefaultsConfig.swift */,
@@ -250,6 +254,7 @@
 		F78371A12555450D0085D2E5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F7CFCBF32557EEF800D8BC54 /* UIView+Screenshot.swift */,
 				F78371A3255545180085D2E5 /* Int+Etensions.swift */,
 				F78371A5255545180085D2E5 /* String+Extensions.swift */,
 				F78371A6255545180085D2E5 /* UICollectionView+Extensions.swift */,
@@ -276,6 +281,7 @@
 		F78371B8255545B50085D2E5 /* Bookmarks */ = {
 			isa = PBXGroup;
 			children = (
+				F7CFCBF62557F5C300D8BC54 /* Cells */,
 				F78371BA255545D70085D2E5 /* BookmarksCoordinator.swift */,
 				F72AF66525558A8D0010E573 /* BookmarksViewController.swift */,
 				F7CFCBE42556CB5000D8BC54 /* BookmarksView.swift */,
@@ -302,6 +308,14 @@
 				F7CFCBE02556BCE700D8BC54 /* PaddingLabel.swift */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		F7CFCBF62557F5C300D8BC54 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F72AF69E2555966C0010E573 /* PokemonListTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,6 +403,8 @@
 				F72AF65F2555899E0010E573 /* Agent.swift in Sources */,
 				F72AF66625558A8D0010E573 /* BookmarksViewController.swift in Sources */,
 				F72AF659255589050010E573 /* BookmarksManager.swift in Sources */,
+				F7CFCBF12557EEDF00D8BC54 /* PopInAndOutAnimator.swift in Sources */,
+				F7CFCBF42557EEF800D8BC54 /* UIView+Screenshot.swift in Sources */,
 				F72AF65C2555893B0010E573 /* UserDefaultsConfig.swift in Sources */,
 				F783719D255544EA0085D2E5 /* Coordinator.swift in Sources */,
 				F78371A9255545180085D2E5 /* UIImageView+Extensions.swift in Sources */,

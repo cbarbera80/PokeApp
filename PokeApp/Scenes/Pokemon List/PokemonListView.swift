@@ -20,16 +20,13 @@ class PokemonListView: UIView {
     lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 10
-        layout.minimumInteritemSpacing = 10
-        layout.sectionInset = .init(top: 10, left: 10, bottom: 10, right: 10)
         return layout
     }()
     
     lazy var collectionView: UICollectionView = {
         
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
+        view.contentInset = UIEdgeInsets(top: 23, left: 16, bottom: 10, right: 16)
         view.backgroundColor = .clear
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -106,15 +103,7 @@ class PokemonListView: UIView {
     func stopLoading() {
         loadingView.isHidden = true
         loadingIndicator.stopAnimating()
-        //tableFooterIndicator.stopAnimating()
-        //tableView.tableFooterView?.isHidden = true
     }
-    
-    func showLoadMoreIndicator() {
-        //tableFooterIndicator.startAnimating()
-        //tableView.tableFooterView?.isHidden = false
-    }
-
 }
 
 #if DEBUG

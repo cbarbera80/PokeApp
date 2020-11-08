@@ -47,6 +47,12 @@ class PokemonDetailsView: UIView {
         return view
     }()
     
+    lazy var cardContentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     lazy var pictureImageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -138,7 +144,7 @@ class PokemonDetailsView: UIView {
         backgroundColor = UIColor(named: "AccentColor")
         
         // loadingView
-        addSubview(loadingView)
+        cardView.addSubview(loadingView)
         
         // loadingIndicator
         loadingView.addSubview(loadingIndicator)
@@ -150,31 +156,33 @@ class PokemonDetailsView: UIView {
         cardView.addSubview(nameLabel)
         
         // pictureImageView
-        cardView.addSubview(pictureImageView)
+        cardContentView.addSubview(pictureImageView)
         
         // heightLabel
-        cardView.addSubview(heightLabel)
+        cardContentView.addSubview(heightLabel)
         
         // weightLabel
-        cardView.addSubview(weightLabel)
+        cardContentView.addSubview(weightLabel)
         
         // typesLabel
-        cardView.addSubview(abilitiesLabel)
+        cardContentView.addSubview(abilitiesLabel)
         
         // typesScrollView
-        cardView.addSubview(abilitiesScrollView)
+        cardContentView.addSubview(abilitiesScrollView)
         
         // statsLabel
-        cardView.addSubview(statsLabel)
+        cardContentView.addSubview(statsLabel)
         
         // statsScrollView
-        cardView.addSubview(statsScrollView)
+        cardContentView.addSubview(statsScrollView)
         
         // typesLabel
-        cardView.addSubview(typesLabel)
+        cardContentView.addSubview(typesLabel)
         
         // typesScrollView
-        cardView.addSubview(typesScrollView)
+        cardContentView.addSubview(typesScrollView)
+        
+        cardView.addSubview(cardContentView)
     }
 
     private func configureConstraints() {
@@ -197,51 +205,57 @@ class PokemonDetailsView: UIView {
             cardView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             cardView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -100),
             
+            // cardViewContentView
+            cardContentView.topAnchor.constraint(equalTo: cardView.topAnchor),
+            cardContentView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor),
+            cardContentView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor),
+            cardContentView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor),
+            
             // pictureImageView
-            pictureImageView.centerXAnchor.constraint(equalTo: cardView.centerXAnchor),
-            pictureImageView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: -75),
+            pictureImageView.centerXAnchor.constraint(equalTo: cardContentView.centerXAnchor),
+            pictureImageView.topAnchor.constraint(equalTo: cardContentView.topAnchor, constant: -75),
             pictureImageView.heightAnchor.constraint(equalToConstant: 150),
             pictureImageView.widthAnchor.constraint(equalToConstant: 150),
             
             // nameLabel
-            nameLabel.centerXAnchor.constraint(equalTo: cardView.centerXAnchor),
+            nameLabel.centerXAnchor.constraint(equalTo: cardContentView.centerXAnchor),
             nameLabel.topAnchor.constraint(equalTo: pictureImageView.bottomAnchor, constant: 16),
             
             // heightLabel
-            heightLabel.centerXAnchor.constraint(equalTo: cardView.centerXAnchor),
+            heightLabel.centerXAnchor.constraint(equalTo: cardContentView.centerXAnchor),
             heightLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 16),
             
             // heightLabel
-            weightLabel.centerXAnchor.constraint(equalTo: cardView.centerXAnchor),
+            weightLabel.centerXAnchor.constraint(equalTo: cardContentView.centerXAnchor),
             weightLabel.topAnchor.constraint(equalTo: heightLabel.bottomAnchor, constant: 8),
             
             // abilitiesLabel
-            abilitiesLabel.centerXAnchor.constraint(equalTo: cardView.centerXAnchor),
+            abilitiesLabel.centerXAnchor.constraint(equalTo: cardContentView.centerXAnchor),
             abilitiesLabel.topAnchor.constraint(equalTo: weightLabel.bottomAnchor, constant: 20),
             
             // abilitiesScrollView
-            abilitiesScrollView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16),
-            abilitiesScrollView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -16),
+            abilitiesScrollView.leadingAnchor.constraint(equalTo: cardContentView.leadingAnchor, constant: 16),
+            abilitiesScrollView.trailingAnchor.constraint(equalTo: cardContentView.trailingAnchor, constant: -16),
             abilitiesScrollView.topAnchor.constraint(equalTo: abilitiesLabel.bottomAnchor, constant: 16),
             abilitiesScrollView.heightAnchor.constraint(equalToConstant: 30),
             
             // statsLabel
-            statsLabel.centerXAnchor.constraint(equalTo: cardView.centerXAnchor),
+            statsLabel.centerXAnchor.constraint(equalTo: cardContentView.centerXAnchor),
             statsLabel.topAnchor.constraint(equalTo: abilitiesScrollView.bottomAnchor, constant: 24),
             
             // statsScrollView
-            statsScrollView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16),
-            statsScrollView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -16),
+            statsScrollView.leadingAnchor.constraint(equalTo: cardContentView.leadingAnchor, constant: 16),
+            statsScrollView.trailingAnchor.constraint(equalTo: cardContentView.trailingAnchor, constant: -16),
             statsScrollView.topAnchor.constraint(equalTo: statsLabel.bottomAnchor, constant: 16),
             statsScrollView.heightAnchor.constraint(equalToConstant: 30),
             
             // typesLabel
-            typesLabel.centerXAnchor.constraint(equalTo: cardView.centerXAnchor),
+            typesLabel.centerXAnchor.constraint(equalTo: cardContentView.centerXAnchor),
             typesLabel.topAnchor.constraint(equalTo: statsScrollView.bottomAnchor, constant: 24),
             
             // typesLabel
-            typesScrollView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16),
-            typesScrollView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -16),
+            typesScrollView.leadingAnchor.constraint(equalTo: cardContentView.leadingAnchor, constant: 16),
+            typesScrollView.trailingAnchor.constraint(equalTo: cardContentView.trailingAnchor, constant: -16),
             typesScrollView.topAnchor.constraint(equalTo: typesLabel.bottomAnchor, constant: 16),
             typesScrollView.heightAnchor.constraint(equalToConstant: 30)
             
@@ -251,13 +265,13 @@ class PokemonDetailsView: UIView {
     func startLoading() {
         loadingView.isHidden = false
         loadingIndicator.startAnimating()
-        cardView.isHidden = true
+        cardContentView.isHidden = true
     }
     
     func stopLoading() {
         loadingView.isHidden = true
         loadingIndicator.stopAnimating()
-        cardView.isHidden = false
+        cardContentView.isHidden = false
     }
 
 }

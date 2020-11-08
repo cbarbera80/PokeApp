@@ -23,6 +23,7 @@ class PokemonListViewModel {
     var hasMoreData = false
     var pokemonViewModels: [PokemonViewModel] = []
     var onStateChange: ((PokemonListViewState) -> Void)?
+    var indexPath: IndexPath!
     
     var state: PokemonListViewState = .idle {
         didSet {

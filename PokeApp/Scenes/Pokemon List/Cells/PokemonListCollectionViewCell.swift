@@ -66,7 +66,7 @@ class PokemonListCollectionViewCell: UICollectionViewCell, ReusableView {
     private func configureUI() {
         contentView.backgroundColor = .white
         contentView.layer.cornerRadius = 20
-        
+  
         // stackView
         contentView.addSubview(stackView)
     

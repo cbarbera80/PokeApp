@@ -29,6 +29,7 @@ class PokemonListTableViewCell: UITableViewCell, ReusableView {
     
     lazy var titleLabel: UILabel = {
         let view = UILabel()
+        view.textColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -46,6 +47,7 @@ class PokemonListTableViewCell: UITableViewCell, ReusableView {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
         configureUI()
         configureConstraints()
     }
@@ -57,6 +59,8 @@ class PokemonListTableViewCell: UITableViewCell, ReusableView {
     // MARK: - Configure methods
     
     private func configureUI() {
+        backgroundColor = UIColor(named: "AccentColor")
+        
         // titleLabel
         contentView.addSubview(titleLabel)
         

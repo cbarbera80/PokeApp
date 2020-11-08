@@ -15,13 +15,15 @@ class BookmarksView: UIView {
     
     lazy var tableView: UITableView = {
         let table = UITableView()
+        table.backgroundColor = .clear
         table.translatesAutoresizingMaskIntoConstraints = false
+        table.separatorColor = UIColor.white.withAlphaComponent(0.7)
         return table
     }()
     
     lazy var emptyView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "AccentColor")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -29,7 +31,7 @@ class BookmarksView: UIView {
     lazy var noDataLabel: UILabel = {
         let view = UILabel()
         view.font = .systemFont(ofSize: 14)
-        view.textColor = .gray
+        view.textColor = .white
         view.text = "There's no pokemon in you bag ;)"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -50,7 +52,7 @@ class BookmarksView: UIView {
     // MARK: - Configure methods
     
     private func configureUI() {
-        backgroundColor = .white
+        backgroundColor = UIColor(named: "AccentColor")
         
         // tableView
         addSubview(tableView)
