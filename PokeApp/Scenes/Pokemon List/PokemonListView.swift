@@ -17,12 +17,22 @@ class PokemonListView: UIView {
         return spinner
     }()
     
-    lazy var tableView: UITableView = {
-        let table = UITableView()
-        table.translatesAutoresizingMaskIntoConstraints = false
-        table.tableFooterView = tableFooterIndicator
-        table.tableFooterView?.isHidden = false
-        return table
+    lazy var layout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
+        layout.sectionInset = .init(top: 10, left: 10, bottom: 10, right: 10)
+        return layout
+    }()
+    
+    lazy var collectionView: UICollectionView = {
+        
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+        view.backgroundColor = .clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     lazy var loadingView: UIView = {
@@ -54,10 +64,10 @@ class PokemonListView: UIView {
     // MARK: - Configure methods
     
     private func configureUI() {
-        backgroundColor = .white
+        backgroundColor = UIColor(named: "AccentColor")
         
-        // tableView
-        addSubview(tableView)
+        // collectionView
+        addSubview(collectionView)
         
         // loadingView
         addSubview(loadingView)
@@ -71,10 +81,10 @@ class PokemonListView: UIView {
         NSLayoutConstraint.activate([
             
             // tableView
-            tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
             
             // loadingView
             loadingView.topAnchor.constraint(equalTo: topAnchor),
@@ -96,13 +106,13 @@ class PokemonListView: UIView {
     func stopLoading() {
         loadingView.isHidden = true
         loadingIndicator.stopAnimating()
-        tableFooterIndicator.stopAnimating()
-        tableView.tableFooterView?.isHidden = true
+        //tableFooterIndicator.stopAnimating()
+        //tableView.tableFooterView?.isHidden = true
     }
     
     func showLoadMoreIndicator() {
-        tableFooterIndicator.startAnimating()
-        tableView.tableFooterView?.isHidden = false
+        //tableFooterIndicator.startAnimating()
+        //tableView.tableFooterView?.isHidden = false
     }
 
 }

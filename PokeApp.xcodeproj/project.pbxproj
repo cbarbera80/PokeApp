@@ -51,6 +51,7 @@
 		F7CFCBE12556BCE700D8BC54 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFCBE02556BCE700D8BC54 /* PaddingLabel.swift */; };
 		F7CFCBE52556CB5000D8BC54 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFCBE42556CB5000D8BC54 /* BookmarksView.swift */; };
 		F7CFCBE82556CBA600D8BC54 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFCBE72556CBA600D8BC54 /* BookmarksViewModel.swift */; };
+		F7CFCBEC2557E1BC00D8BC54 /* PokemonListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFCBEB2557E1BC00D8BC54 /* PokemonListCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		F7CFCBE02556BCE700D8BC54 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		F7CFCBE42556CB5000D8BC54 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		F7CFCBE72556CBA600D8BC54 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
+		F7CFCBEB2557E1BC00D8BC54 /* PokemonListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				F72AF69E2555966C0010E573 /* PokemonListTableViewCell.swift */,
+				F7CFCBEB2557E1BC00D8BC54 /* PokemonListCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -188,8 +191,8 @@
 		F783718D255542DF0085D2E5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				F78371B8255545B50085D2E5 /* Bookmarks */,
 				F78371B7255545A80085D2E5 /* Pokemon List */,
+				F78371B8255545B50085D2E5 /* Bookmarks */,
 				F77624E025569613000CDA44 /* Details */,
 			);
 			path = Scenes;
@@ -410,6 +413,7 @@
 				F78371782555426A0085D2E5 /* AppDelegate.swift in Sources */,
 				F72AF6A3255597650010E573 /* PokemonViewModel.swift in Sources */,
 				F78371C5255546680085D2E5 /* MockPokemonServices.swift in Sources */,
+				F7CFCBEC2557E1BC00D8BC54 /* PokemonListCollectionViewCell.swift in Sources */,
 				F72AF66925558B760010E573 /* ClearNavigationController.swift in Sources */,
 				F78371C6255546680085D2E5 /* MockMapOperation.swift in Sources */,
 				F72AF66C25558B830010E573 /* MainTheme.swift in Sources */,

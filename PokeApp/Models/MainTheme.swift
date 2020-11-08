@@ -11,7 +11,7 @@ import UIKit
 struct MainTheme {
     
     func setupAppearance() {
-        setupNavigationAppearance(for: ClearNavigationController.self, withTintColor: .black, andBarTintColor: .clear, isTraslucent: true)
+        setupNavigationAppearance(for: ClearNavigationController.self, withTintColor: .white, andBarTintColor: .clear, isTraslucent: true)
     }
     
     private func setupNavigationAppearance<T: UIAppearanceContainer>(for appearanceContainer: T.Type,
@@ -27,7 +27,7 @@ struct MainTheme {
         navigationBarAppearance.setBackgroundImage(UIImage(), for: .default)
         navigationBarAppearance.shadowImage = UIImage()
         navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: tintColor]
-
+        navigationBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: tintColor]
     }
     
 }

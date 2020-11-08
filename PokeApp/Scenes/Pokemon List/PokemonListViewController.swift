@@ -54,10 +54,10 @@ class PokemonListViewController: UIViewController {
     
     // MARK: - Configure methods
     private func configureUI() {
-        _view?.tableView.dataSource = self
-        _view?.tableView.delegate = self
-        _view?.tableView.register(PokemonListTableViewCell.self)
-        _view?.tableView.contentInsetAdjustmentBehavior = .always
+        _view?.collectionView.dataSource = self
+        _view?.collectionView.delegate = self
+        _view?.collectionView.register(PokemonListCollectionViewCell.self)
+        _view?.collectionView.contentInsetAdjustmentBehavior = .always
         edgesForExtendedLayout = .all
     }
     
@@ -70,38 +70,42 @@ class PokemonListViewController: UIViewController {
             _view?.stopLoading()
         case .loaded:
             _view?.stopLoading()
-            _view?.tableView.reloadData()
+            _view?.collectionView.reloadData()
         case .error:
             _view?.stopLoading()
         }
     }
 }
 
-extension PokemonListViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension PokemonListViewController: UICollectionViewDataSource {
+   
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.pokemonViewModels.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: PokemonListTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.viewModel = viewModel.pokemonViewModels[indexPath.row]
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: PokemonListCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.viewModel = viewModel.pokemonViewModels[indexPath.item]
         return cell
     }
 }
 
-extension PokemonListViewController: UITableViewDelegate {
+extension PokemonListViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.bounds.width / 2 - 15
+        return .init(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let id = viewModel.pokemonViewModels[indexPath.item].id else { return }
+        delegate?.openDetails(withId: id, pokemon: viewModel.pokemonViewModels[indexPath.row].pokemon)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if viewModel.hasMoreData, indexPath.row == viewModel.pokemonViewModels.count - 5 {
             viewModel.loadNextPage()
             _view?.showLoadMoreIndicator()
         }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let id = viewModel.pokemonViewModels[indexPath.row].id else { return }
-        delegate?.openDetails(withId: id, pokemon: viewModel.pokemonViewModels[indexPath.row].pokemon)
     }
 }
